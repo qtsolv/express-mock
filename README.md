@@ -4,7 +4,7 @@ This is a mock API server implementation (for use in automation testing) to crea
 
 ## Usage
 
-For an example, see the [routes/index.js](routes/index.js) on how it serves contents from [routes/data/users.json](routes/data/users.json) on `GET /users` request.
+For an example, see the [routes/index.js](routes/index.js) on how it serves contents from [routes/json/users.json](routes/json/users.json) on `GET /users` request.
 
 Starting the server is similar to any other [Express](https://expressjs.com) powered app:
 
