@@ -1,18 +1,17 @@
 version: '3'
 
-services:
-  external-services:
-    build: .
-    container_name: mock-server
-    ports:
-      - "8989:8989"
-    networks:
-      service1_net:
-    healthcheck:
-      test: ["CMD", "curl", "-sf", "localhost:8989/healthcheck"]
-      interval: 2s
-      timeout: 5s
-      retries: 3
-
 networks:
-  service1_net:
+  mock-server:
+
+services:
+  express:
+    build:
+      args:
+        emulated_delay: "${EMULATED_DELAY-0}"
+      context: .
+    healthcheck:
+      test: curl -f http://localhost:3000
+    networks:
+      mock-server:
+    ports:
+      - "3000:3000"

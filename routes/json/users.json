@@ -1,0 +1,10 @@
+{
+  "data": [
+    { "name": "Vipin Vindal", "email": "vipin.vindal@qtsolv.com" },
+    { "name": "Saurabh Anand", "email": "saurabh.anand@qtsolv.com" },
+    { "name": "Vaibhav Pandey", "email": "vaibhav.pandey@qtsolv.com" }
+  ],
+  "meta": {
+    "total": 2
+  }
+}

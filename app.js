@@ -1,15 +1,17 @@
-var express = require('express');
-var fs = require('fs');
-var app = express();
-var conf = require('./routes/conf-service/conf');
-var core = require('./routes/core-service/core');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
-var router = express.Router();
+const app = express();
 
-app.get('/api/v1/config/general',conf.general);
-app.get('/healthcheck', core.healthcheck);
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 
-
-app.listen(8989);
+app.use(require('./middleware/delay'));
+app.use(require('./routes'));
 
 module.exports = app;
