@@ -1,6 +1,6 @@
 # express-mock
 
-This is a mock API server implementation (for use in automation testing) to create mock endpoints with static JSON data served directly to files.
+This is a mock API server implementation (for use in automation testing) to create mock endpoints with static JSON data served directly from files.
 
 ## Usage
 
